@@ -122,11 +122,11 @@ Oluşan loglarda servisinizin URL'sini göreceksiniz. Bu URL adresini kopyalayı
 
 Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığıyla yapacağız. 
 Curl komutundaki URL'ye kendi URL'nizi yazın. 
-Benim durumumda bu http://fibonacci-service-aggregate-gramps.mybluemix.net
+Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
 
   **1. 1000.ci Fibonacci sayısını bulmak için**
   ```
-  $ curl -v http://fibonacci-service-**<random-string>**.mybluemix.net/fibonacci?iteration=1000
+  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
   
   #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -138,7 +138,7 @@ Benim durumumda bu http://fibonacci-service-aggregate-gramps.mybluemix.net
   
   **2. 5 saniye çalışığ durduğunda son hesapladığı Fibonacci sayısını bulmak için**
   ```
-  $ curl -v http://fibonacci-service-**<random-string>**.mybluemix.net/fibonacci?duration=5000
+  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
 
   #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -155,7 +155,7 @@ Benim durumumda bu http://fibonacci-service-aggregate-gramps.mybluemix.net
 
   **3. Hata oluşmasını sağlamak için**
   ```
-  $ curl -v -X POST http://fibonacci-service-**<random-string>**.mybluemix.net/fibonacci?crash=true
+  $ curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
 
   #Hata olmaması için crash=false yazmanız yetreli. Kod normal çalışacaktır.
 
