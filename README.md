@@ -92,18 +92,18 @@ Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza 
   $ cd multiple-deployement-options
   ```
 
-##1- Sanal Makinede Çalışmak - Cloud Foundry
+## 1- Sanal Makinede Çalışmak - Cloud Foundry
 
 Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kaldıracağız. 
              
-Şimdi kendi bilgisayarınızda, /proje_dizini/**multiple-deployment-options/service** dizininde olduğunuzdan emin olun.
+Şimdi kendi bilgisayarınızda, /proje_dizini/multiple-deployment-options/**service** dizininde olduğunuzdan emin olun.
 
 Daha sonra bu dizindeyken, 
 
   ```
   $ bx cf push
   ```
-cloudfoundry push komutu ile klonladığımız Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
+komutu ile dizindeki Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
 
 
 Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayın.
@@ -121,10 +121,11 @@ Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayı
   ```
 
 Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığıyla yapacağız. 
+<random-string> yerine kendi logunuzdaki URL'yi yazın. Benim durumumda bu "aggregate-gramps".
 
   **1. 1000.ci Fibonacci sayısını bulmak için**
   ```
-  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
+  $ curl -v http://fibonacci-service-**<random-string>**.mybluemix.net/fibonacci?iteration=1000
   
   #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -136,7 +137,7 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
   
   **2. 5 saniye çalışığ durduğunda son hesapladığı Fibonacci sayısını bulmak için**
   ```
-  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
+  $ curl -v http://fibonacci-service-**<random-string>**.mybluemix.net/fibonacci?duration=5000
 
   #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -153,7 +154,7 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
 
   **3. Hata oluşmasını sağlamak için**
   ```
-  $ curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
+  $ curl -v -X POST http://fibonacci-service-**<random-string>**.mybluemix.net/fibonacci?crash=true
 
   #Hata olmaması için crash=false yazmanız yetreli. Kod normal çalışacaktır.
 
