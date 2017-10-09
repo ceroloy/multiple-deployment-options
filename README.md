@@ -106,7 +106,7 @@ Daha sonra bu dizindeyken,
 komutu ile dizindeki Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
 
 
-Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayın.
+Oluşan loglarda servisinizin URL'sini göreceksiniz. Bu URL adresini kopyalayın.
   
 
   ```
@@ -121,7 +121,8 @@ Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayı
   ```
 
 Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığıyla yapacağız. 
-<random-string> yerine kendi logunuzdaki URL'yi yazın. Benim durumumda bu "aggregate-gramps".
+Curl komutundaki URL'ye kendi URL'nizi yazın. 
+Benim durumumda bu http://fibonacci-service-aggregate-gramps.mybluemix.net
 
   **1. 1000.ci Fibonacci sayısını bulmak için**
   ```
