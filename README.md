@@ -45,7 +45,7 @@ Servisi iki ayrı şekilde ayağa kaldırıp test edebiliriz. Burada terminalde 
 
 Bluemix hesabını açtıktan sonra, bir bölge seçmemiz gerekli.
 
-  Böle | Link
+  Bölge | Link
   --- | --- 
  US South and US East | api.ng.bluemix.net
  Sydney | api.au-syd.bluemix.net
@@ -56,7 +56,7 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
 # Bluemix'e giriş yapmak
 
-  ```
+  ```bash
   $ bx login -a <BOLGE_URL>
     Email> mail adresiniz
     Password> sifreniz
@@ -75,14 +75,14 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
 Öncelikle kendi bilgisayarınızda bir proje dizini yaratıp dizin değiştirin.
 
-  ```
+  ```bash
   $ cd proje_dizini
   ```
 
 Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza klonlayın.
   
 
-  ```
+  ```bash
   #Doğru dizinde olduğunuzdan emin olun
   $ pwd
   $ .../proje_dizini
@@ -100,7 +100,7 @@ Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kal
 
 Daha sonra bu dizindeyken, 
 
-  ```
+  ```bash
   $ bx cf push
   ```
 komutu ile dizindeki Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
@@ -109,7 +109,7 @@ komutu ile dizindeki Fibonacci mikroservisini bir CloudFoundry sanal makinesinde
 Oluşan loglarda servisinizin URL'sini göreceksiniz. Bu URL adresini kopyalayın.
   
 
-  ```
+  ```bash
   ...
   requested state: started
   instances: 1/1
@@ -125,7 +125,7 @@ Curl komutundaki URL'ye kendi URL'nizi yazın.
 Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
 
   **1. 1000.ci Fibonacci sayısını bulmak için**
-  ```
+  ```bash
   $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
   
   #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
@@ -137,7 +137,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
   ```
   
   **2. 5000 milisaniye çalışıp durduğunda son hesapladığı Fibonacci sayısını bulmak için**
-  ```
+  ```bash
   $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
 
   #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
@@ -154,7 +154,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
   ```
 
   **3. Hata oluşmasını sağlamak için**
-  ```
+  ```bash
   $ curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
 
   #Hata olmaması için crash=false yazmanız yetreli. Kod normal çalışacaktır.
@@ -167,7 +167,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
 
 Daha sonra bulutta çalışan CloudFoundry servislerini temizlemek isterseniz, alanda çalışan CloudFoundry App'lerinizi şu şekilde görüntüleyebiliriz.
 
-  ```
+  ```bash
   $ bx cf apps
 
   #Sanal makinayı durdurmak için
