@@ -136,7 +136,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
   {"number":"43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875","length":209,"iterations":"1000","ms":166}
   ```
   
-  **2. 5 saniye çalışığ durduğunda son hesapladığı Fibonacci sayısını bulmak için**
+  **2. 5000 milisaniye çalışıp durduğunda son hesapladığı Fibonacci sayısını bulmak için**
   ```
   $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
 
