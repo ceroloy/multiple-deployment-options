@@ -71,7 +71,7 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
   ```
 
-# Servisi Ayağa Kaldırmak
+# Kaynak Kodu Edinmek
 
 Öncelikle kendi bilgisayarınızda bir proje dizini yaratıp dizin değiştirin.
 
@@ -176,3 +176,8 @@ Daha sonra bulutta çalışan CloudFoundry servislerini temizlemek isterseniz, a
   #Sanal makinayı silmek için
   $ bx cf delete fibonacci-service
   ```
+
+
+## 2- Konteynerde Çalışmak
+  
+    **Under Construction**
