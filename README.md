@@ -36,7 +36,7 @@ Bu örnek gösterimde bir Fibonacci Servisini üç farklı mimaride sırasıyla 
 * [Docker CLI](https://docs.docker.com/engine/installation/) version 1.9 (veya sonrası)
 
 
-Servisi iki ayrı şekilde ayağa kaldırıp test edebiliriz. Burada komut istemi ekranı üzerinden, yazılı komutlarla çalışacağız.
+Servisi iki ayrı şekilde ayağa kaldırıp test edebiliriz. Burada terminalde yazılı komutlarla çalışacağız.
 
 **Not :** CloudFoundry Command Line Bluemix altında çalışmaktadır. Bu nedenle cf cli komutlarını kullanırken "**bx cf** --komut" şeklinde kullanmalısınız.
 
@@ -97,14 +97,15 @@ Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza 
 
 Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kaldıracağız. 
              
-Şimdi kendi bilgisayarınızda, bir komut istemi ekranında /.../multiple-deployment-options/service dizininde olduğunuzdan emin olun.
+Şimdi kendi bilgisayarınızda, /proje_dizini/**multiple-deployment-options/service** dizininde olduğunuzdan emin olun.
 
 Daha sonra bu dizindeyken, 
 
   ```
   $ bx cf push
   ```
-komutu ile klonladığımız Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
+cloudfoundry push komutu ile klonladığımız Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
+
 
 Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayın.
   
