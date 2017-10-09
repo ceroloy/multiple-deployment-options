@@ -96,7 +96,7 @@ Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza 
 
 Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kaldıracağız. 
              
-Şimdi kendi bilgisayarınızda, /proje_dizini/multiple-deployment-options/**service** dizininde olduğunuzdan emin olun.
+Şimdi kendi bilgisayarınızda, $.../proje_dizini/multiple-deployment-options/**service** dizininde olduğunuzdan emin olun.
 
 Daha sonra bu dizindeyken, 
 
