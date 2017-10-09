@@ -11,9 +11,9 @@ Bu örnekte bir Bluemix hesabına ihtiyacımız vardır. *30 günlük ücretsiz 
 
 Bu örnek gösterimde bir Fibonacci Servisini üç farklı mimaride sırasıyla ayağa kaldırıp, 3 farklı API isteği için test edeceğiz.
 
-... 1. Servis aldığı sıra sayısı (n)'de bulunan fibonacci sayısını döner. **.../fibonacci?iteration=1000**
-... 2. Verilen süre içerisinde son ulaştığı Fibonacci sayısını döner. **.../fibonacci?duration=1000**
-... 3. Koda hatalı girdi yaparak servisin çökmesini test etmek. **.../fibonacci?crash=true**
+1. Servis aldığı sıra sayısı (n)'de bulunan fibonacci sayısını döner. **.../fibonacci?iteration=1000**
+2. Verilen süre içerisinde son ulaştığı Fibonacci sayısını döner. **.../fibonacci?duration=1000**
+3. Koda hatalı girdi yaparak servisin çökmesini test etmek. **.../fibonacci?crash=true**
 
 
 **Kullanacağımız mimari modelleri ve servisler aşağıdaki tabloda sıralanmıştır.**
@@ -38,7 +38,7 @@ Bu örnek gösterimde bir Fibonacci Servisini üç farklı mimaride sırasıyla 
 
 Servisi iki ayrı şekilde ayağa kaldırıp test edebiliriz. Burada komut istemi ekranı üzerinden, yazılı komutlarla çalışacağız.
 
-Not : CloudFoundry Command Line Bluemix altında çalışmaktadır. Bu nedenle cf cli komutlarını kullanırken "**bx cf** --komut" şeklinde kullanmalısınız.
+**Not :** CloudFoundry Command Line Bluemix altında çalışmaktadır. Bu nedenle cf cli komutlarını kullanırken "**bx cf** --komut" şeklinde kullanmalısınız.
 
 
 ## Bluemix'e Giriş ve Çalışma Alanı Seçmek
@@ -54,11 +54,10 @@ Bluemix hesabını açtıktan sonra, bir bölge seçmemiz gerekli.
 
 Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
-#Giriş
-
+# Bluemix'e giriş yapmak
 
   ```
-  bx login -a api.ng.bluemix.net #For USSouth
+  bx login -a <BOLGE_URL>
   Email> mail adresiniz
   Password> sifreniz
 
