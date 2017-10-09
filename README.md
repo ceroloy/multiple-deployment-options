@@ -57,18 +57,18 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 # Bluemix'e giriş yapmak
 
   ```
-  bx login -a <BOLGE_URL>
-  Email> mail adresiniz
-  Password> sifreniz
+  $ bx login -a <BOLGE_URL>
+    Email> mail adresiniz
+    Password> sifreniz
 
   #Eğer tek kullanımlık kod kullanmak isterseniz
 
-  bx login -a <BOLGE_URL> -u <EMAIL> --sso
+  $ bx login -a <BOLGE_URL> -u <EMAIL> --sso
   One Time Code (Get one at https://iam.ng.bluemix.net/oidc/passcode)> TekKullanımKod
   ...
 
   #Daha sonra organizasyon ve alan seçeceğiz
-  bx target -o OrganizasyonAdı -s AlanAdı
+  $ bx target -o OrganizasyonAdı -s AlanAdı
 
   ```
 
@@ -77,7 +77,7 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 Öncelikle bir proje dizini yaratıp dizin değiştirelim
 
   ```
-  cd proje_dizini
+  $ cd proje_dizini
   ```
 
 Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza klonlayın.
