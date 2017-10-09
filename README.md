@@ -11,12 +11,12 @@ Bu örnekte bir Bluemix hesabına ihtiyacımız vardır. *30 günlük ücretsiz 
 
 Bu örnek gösterimde bir Fibonacci Servisini üç farklı mimaride sırasıyla ayağa kaldırıp, 3 farklı API isteği için test edeceğiz.
 
-* Bu servis aldığı sıra sayısı (n)'de bulunan fibonacci sayısını döner. .../fibonacci?iteration=1000 
-* Verilen süre içerisinde son ulaştığı Fibonacci sayısını döner. .../fibonacci?duration=1000 
-* Koda hatalı girdi yaparak servisin çökmesini test etmek. .../fibonacci?crash=true 
+... 1. Servis aldığı sıra sayısı (n)'de bulunan fibonacci sayısını döner. **.../fibonacci?iteration=1000**
+... 2. Verilen süre içerisinde son ulaştığı Fibonacci sayısını döner. **.../fibonacci?duration=1000**
+... 3. Koda hatalı girdi yaparak servisin çökmesini test etmek. **.../fibonacci?crash=true**
 
 
-Kullanacağımız mimari modelleri ve servisler aşağıdaki tabloda sıralanmıştır.
+**Kullanacağımız mimari modelleri ve servisler aşağıdaki tabloda sıralanmıştır.**
 
   Sayı  | Tür | Ürün
 --- | --- | ---
@@ -25,7 +25,7 @@ Kullanacağımız mimari modelleri ve servisler aşağıdaki tabloda sıralanmı
 3 | Sunucusuz Mimari | [OpenWhisk](http://openwhisk.org/)
 
 
-Bu gösterim için ayrıca aşağıdaki ek paketlere de ihtiyacımız olacaktır.
+**Bu gösterim için ayrıca aşağıdaki ek paketlere de ihtiyacımız olacaktır.**
 
 * [Bluemix CLI](https://clis.ng.bluemix.net/ui/home.html)
 * [OpenWhisk CLI](https://console.ng.bluemix.net/openwhisk/learn/cli)
@@ -38,12 +38,8 @@ Bu gösterim için ayrıca aşağıdaki ek paketlere de ihtiyacımız olacaktır
 
 Servisi iki ayrı şekilde ayağa kaldırıp test edebiliriz. Burada komut istemi ekranı üzerinden, yazılı komutlarla çalışacağız.
 
-Notlar
-CloudFoundry Command Line Bluemix altında çalışmaktadır. Bu nedenle cf cli komutlarını
-bx cf ... şeklinde kullanmalısınız.
+Not : CloudFoundry Command Line Bluemix altında çalışmaktadır. Bu nedenle cf cli komutlarını kullanırken "**bx cf** --komut" şeklinde kullanmalısınız.
 
-
-*Proje için bir dizin oluşturup terminalde doğru dizinde olduğumuzdan emin olalım.*
 
 ## Bluemix'e Giriş ve Çalışma Alanı Seçmek
 
@@ -79,13 +75,23 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
 # Servisi Ayağa Kaldırmak
 
-Fibonacci servisinin kaynak kodunu github'dan kendi makinenize klonlayın.
+Öncelikle bir proje dizini yaratıp dizin değiştirelim
+
+  ```
+  cd proje_dizini
+  ```
+
+Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza klonlayın.
   
 
   ```
-  git init
-  git clone https://github.com/IBM-Bluemix/multiple-deployment-options.git
-  cd multiple-deployement-options
+  #Doğru dizinde olduğunuzdan emin olun
+  $ pwd
+  $ .../proje_dizini
+
+  $ git init
+  $ git clone https://github.com/IBM-Bluemix/multiple-deployment-options.git
+  $ cd multiple-deployement-options
   ```
 
 ##1- Sanal Makinede Çalışmak - Cloud Foundry
@@ -97,7 +103,7 @@ Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kal
 Daha sonra bu dizindeyken, 
 
   ```
-  bx cf push
+  $ bx cf push
   ```
 komutu ile klonladığımız Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
 
@@ -119,7 +125,7 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
 
   **1. 1000.ci Fibonacci sayısını bulmak için**
   ```
-  curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
+  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
   
   #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -131,7 +137,7 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
   
   **2. 5 saniye çalışığ durduğunda son hesapladığı Fibonacci sayısını bulmak için**
   ```
-  curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
+  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
 
   #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -148,7 +154,7 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
 
   **3. Hata oluşmasını sağlamak için**
   ```
-  curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
+  $ curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
 
   #Hata olmaması için crash=false yazmanız yetreli. Kod normal çalışacaktır.
 
@@ -161,11 +167,11 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
 Daha sonra bulutta çalışan CloudFoundry servislerini temizlemek isterseniz, alanda çalışan CloudFoundry App'lerinizi şu şekilde görüntüleyebiliriz.
 
   ```
-  bx cf apps
+  $ bx cf apps
 
   #Sanal makinayı durdurmak için
-  bx cf stop fibonacci-service
+  $ bx cf stop fibonacci-service
 
   #Sanal makinayı silmek için
-  bx cf delete fibonacci-service
+  $ bx cf delete fibonacci-service
   ```
