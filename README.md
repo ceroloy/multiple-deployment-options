@@ -1,5 +1,5 @@
-#### [You can find the original tutorial here](https://github.com/IBM-Bluemix/multiple-deployment-options.git/README.md)
-#### [Orijinal Ingilizce anlatımı burada bulabilirsiniz](https://github.com/IBM-Bluemix/multiple-deployment-options.git/README.md)
+#### [You can find the original tutorial here](https://github.com/IBM-Bluemix/multiple-deployment-options.git)
+#### [Orijinal Ingilizce anlatımı burada bulabilirsiniz](https://github.com/IBM-Bluemix/multiple-deployment-options.git)
 
 # Üç Farklı Platformda Fibonacci Mikroservisi'nin Çalıştırılması
 
