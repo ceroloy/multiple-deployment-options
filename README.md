@@ -65,7 +65,6 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
   $ bx login -a <BOLGE_URL> -u <EMAIL> --sso
   One Time Code (Get one at https://iam.ng.bluemix.net/oidc/passcode)> TekKullanımKod
-  ...
 
   #Daha sonra organizasyon ve alan seçeceğiz
   $ bx target -o OrganizasyonAdı -s AlanAdı
@@ -74,7 +73,7 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
 # Servisi Ayağa Kaldırmak
 
-Öncelikle bir proje dizini yaratıp dizin değiştirelim
+Öncelikle kendi bilgisayarınızda bir proje dizini yaratıp dizin değiştirin.
 
   ```
   $ cd proje_dizini
