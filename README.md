@@ -1,5 +1,5 @@
-[You can find the original tutorial here](.../docs/README_ENG.md)
-[Orijinal Ingilizce anlatımı burada bulabilirsiniz](.../docs/README_ENG.md)
+## [You can find the original tutorial here](.../docs/README_ENG.md)
+## [Orijinal Ingilizce anlatımı burada bulabilirsiniz](.../docs/README_ENG.md)
 
 # Üç Farklı Platformda Fibonacci Mikroservisi'nin Çalıştırılması
 
@@ -18,7 +18,7 @@ Bu örnek gösterimde bir Fibonacci Servisini üç farklı mimaride sırasıyla 
 
 Kullanacağımız mimari modelleri ve servisler aşağıdaki tabloda sıralanmıştır.
 
- | Tür | Ürün
+  Sayı  | Tür | Ürün
 --- | --- | ---
 1 | Sanal Makine | [Cloud Foundry](https://www.cloudfoundry.org/)
 2 | Konteyner | [Kubernetes cluster](https://kubernetes.io/)
@@ -58,7 +58,7 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
 #Giriş
 
-  Use
+
   ```
   bx login -a api.ng.bluemix.net #For USSouth
   Email> mail adresiniz
@@ -77,7 +77,7 @@ Bu seçtiğimiz bölgenin linkini komuta ekleyerek giriş yapacağız.
 
 Fibonacci servisinin kaynak kodunu github'dan kendi makinenize klonlayın.
   
-  Use
+
   ```
   git init
   git clone https://github.com/IBM-Bluemix/multiple-deployment-options.git
@@ -91,7 +91,7 @@ Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kal
 Şimdi kendi bilgisayarınızda, bir komut istemi ekranında /.../multiple-deployment-options/service dizininde olduğunuzdan emin olun.
 
 Daha sonra bu dizindeyken, 
-  Use
+
   ```
   bx cf push
   ```
@@ -99,7 +99,7 @@ komutu ile klonladığımız Fibonacci mikroservisini bir CloudFoundry sanal mak
 
 Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayın.
   
-  Use
+
   ```
   ...
   requested state: started
@@ -113,7 +113,6 @@ Oluşan loglarda servisinizin url'sini göreceksiniz. Bu URL adresini kopyalayı
 
 Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığıyla yapacağız. 
 
-  Use
   ```
   #1000.ci Fibonacci sayısını bulmak için
   curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
@@ -125,7 +124,6 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
   {"number":"43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875","length":209,"iterations":"1000","ms":166}
   ```
 
-  Use
   ```
   #5 saniye çalışığ durduğunda son hesapladığı Fibonacci sayısını bulmak için
   curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
@@ -142,7 +140,6 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
   {"number":"12200568776393358311795938145608518514285062513840604956816948486021034777530794919417191678949426161320208111203758649248108173709993091530675981281103537762594384441927823154990041443649933119458129656450328236630353746408122663540888104508401459234914638689357876787876965039173160644881193973314404680822428220058192230027591823855096918891025541592329233213010717133321003789631715866434682138911662206125637174772090302020390965608296465024304921897409499306077470544762976177612740421023296509071106453511901655692518733714306020618575085111023241622396221823028220601329980654661774909002020006106953600265907303833911112853907422593197745618480313257271010060130981552323189246162177071083388698555814617011739090883865211987433072111394748091396693748668666070480796648665584260774008816024983941130397402329553926034795730359577026008402597017908330383273710563382978177306696544697981766897994933160734239794695135917341546817713918349949072976527692562725408052886992467452873163209286774709601813434290571329502914994835183486883698739510685519271372158227391029596342268884201468039318935543716825662718208143002584990456510785390846476054591965352362968947972365881888140691557109096367476492239113919237851325860528637804756743504458933921495805788280221","length":1271,"iterations":"6079","ms":5000}
   ```
 
-  Use
   ```
   #Hata oluşmasını sağlamak için
   curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
@@ -156,7 +153,6 @@ Servis çalışmaya başladıktan sonra, servis isteklerimizi bu URL aracılığ
 
 Alanda çalışan CloudFoundry App'lerinizi şu şekilde görüntüleyebiliriz.
 
-  Use
   ```
   bx cf apps
   #Sanal makinayı durdurmak için
