@@ -23,10 +23,11 @@ $ bx cr namespace-list
 
 Eğer bir alan adınız yoksa, konteyneri buluta göndermeden önce bir tane oluşturmalısınız.
 
+```
 $ bx cr namespace-add fibonacci_myName
-``
+```
 
-Bilgisayarınızda $.../proje_dizini/multiple-deployment-options/service dizininde olduğunuzdan emin olun.
+Bilgisayarınızda $.../proje_dizini/multiple-deployment-options/**service** dizininde olduğunuzdan emin olun.
 
 Servisi bir Docker Image olarak oluşturacağız. Komuttaki namespace'e kendi alan adınızı yazın ve Docker Image'ı oluşturun. Komutun sonunda bir nokta olduğuna dikkat edin.
 
@@ -40,7 +41,7 @@ Daha sonra Docker Image'ı buluta yükleyin.
 $ docker push registry.ng.bluemix.net/<namespace>/fibonacci:latest
 ```
 
-Kubernetes Cluster Oluşturma
+## Kubernetes Cluster Oluşturma
 
 Hazır bir clusterı da kullanabilirsiniz.
 
