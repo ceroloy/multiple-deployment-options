@@ -78,3 +78,5 @@ Curl komutunda bu alan adını kullanarak fibonacci servisi çağıracağız.
   $ bx wsk action list
   $ bx wsk delete <action_name>
   ```
+
+  **Not**: [Buradan](https://console.bluemix.net/docs/openwhisk/bluemix_cli.html#cloudfunctions_cli) okuyabileceğiniz üzere, syntax "bx wsk .. " şeklindedir.
