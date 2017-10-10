@@ -36,8 +36,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
   ```
   $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
   
-  #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
-  #istediğiniz sayıyı verebilirsiniz.
+  #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi istediğiniz sayıyı verebilirsiniz.
 
   #100.ci Fibonacci sayısı, ve kaç milisaniyede çalıştığı
 
@@ -48,8 +47,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
   ```
   $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
 
-  #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
-  #istediğiniz sayıyı verebilirsiniz.
+  #Farklı süreleri denemek için duration'ı, ..duration=100 gibi istediğiniz sayıyı verebilirsiniz.
 
   #100.ci Fibonacci sayısı, ve kaç milisaniyede çalıştığı
   

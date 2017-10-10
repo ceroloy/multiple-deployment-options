@@ -112,8 +112,7 @@ Curl komutunda bu IP'yi kullanarak fibonacci servisi çağıracağız.
   ```
   $ curl -v http://<cluster-public-ip>:30080/fibonacci?iteration=1000
   
-  #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
-  istediğiniz sayıyı verebilirsiniz.
+  #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi istediğiniz sayıyı verebilirsiniz.
 
 
   {"number":"43466557686937456435688527675040625802564660517371780402481729089536555417949051890403879840079255169295922593080322634775209689623239873322471161642996440906533187938298969649928516003704476137795166849228875","length":209,"iterations":"1000","ms":380}
