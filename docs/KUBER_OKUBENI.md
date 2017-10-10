@@ -10,18 +10,18 @@ Docker hakkında Türkçe [Kaynak](http://www.gokhansengun.com/docker-nedir-nasi
 Bluemix üzerinden Docker servisine giriş yapın. 
 
 ```
- bx cr login
+$ bx cr login
 ```
 
 Alanadlarını listelemek için aşağıdaki komutu kullanın.
 
 ```
- bx cr namespace-list
+$ bx cr namespace-list
 ```
 
 Eğer bir alan adınız yoksa, konteyneri buluta göndermeden önce bir tane oluşturmalısınız.
 
- bx cr namespace-add fibonacci_myName
+$ bx cr namespace-add fibonacci_myName
 ``
 
 Bilgisayarınızda $.../proje_dizini/multiple-deployment-options/service dizininde olduğunuzdan emin olun.
@@ -29,13 +29,13 @@ Bilgisayarınızda $.../proje_dizini/multiple-deployment-options/service dizinin
 Servisi bir Docker Image olarak oluşturacağız. Komuttaki namespace'e kendi alan adınızı yazın ve Docker Image'ı oluşturun. Komutun sonunda bir nokta olduğuna dikkat edin.
 
 ```
- docker build -t registry.ng.bluemix.net/<namespace>/fibonacci:latest .
+$ docker build -t registry.ng.bluemix.net/<namespace>/fibonacci:latest .
 ```
 
 Daha sonra Docker Image'ı buluta yükleyin.
 
 ```
- docker push registry.ng.bluemix.net/<namespace>/fibonacci:latest
+$ docker push registry.ng.bluemix.net/<namespace>/fibonacci:latest
 ```
 
 Kubernetes Cluster Oluşturma
@@ -43,14 +43,14 @@ Kubernetes Cluster Oluşturma
 Hazır bir clusterı da kullanabilirsiniz.
 
 ```
- bx cs cluster-create --name fibonacci-cluster
+$ bx cs cluster-create --name fibonacci-cluster
 ```
 
 Clusterın hazırlanması biraz sürebilir. Clusterın durumunu aşağıdaki komutla kontrol edebilirsiniz. Hazır clusterın durumu "normal" olmalı. Ayrıca cluster "worker"larının durumu "ready" yani hazır hale gelmeli. 
 
 ```
- bx cs clusters
- bx cs workers fibonacci-cluster
+$ bx cs clusters
+$ bx cs workers fibonacci-cluster
 ```
 
 ## Servisi Ayağa Kaldırmak
@@ -59,23 +59,23 @@ Clusterın hazırlanması biraz sürebilir. Clusterın durumunu aşağıdaki kom
 Konfigurasyon detaylarını "fibonacci-cluster"ı için aşağıdaki komutla indirin.
 
 ```
- bx cs cluster-config <cluster-name>
+$ bx cs cluster-config <cluster-name>
 ```
 
 Komutun çıktısı aşağıdaki gibi olmalı
 
 ```
- OK
+$ OK
 The configuration for fibonacci-cluster was downloaded successfully. Export environment variables to start using Kubernetes.
 
 export KUBECONFIG=/home/<myUser>/.bluemix/plugins/container-service/clusters/<cluster-name>/kube-config-hou02-fibonacci-cluster.yml
 
 ```
 
-``` export KUBECONFIG=...``` komutunu kopyala-yapıştır yaparak çalıştırın.
+```$ export KUBECONFIG=...``` komutunu kopyala-yapıştır yaparak çalıştırın.
 
 
-``` kubectl get nodes``` komutu ile konfigurasyonun çalıştığını teyit edin.
+```$ kubectl get nodes``` komutu ile konfigurasyonun çalıştığını teyit edin.
 
 fibonacci-deployement.yml dosyasındaki <namespace> yerine kendi alan adınızı yazın ve dosyayı kaydedin.
 
@@ -93,7 +93,6 @@ fibonacci-deployement.yml dosyasındaki <namespace> yerine kendi alan adınızı
 Son olarak Fibonacci Servisini cluster'da ayağa kaldırın.
 
 ``` 
-kubectl create -f fibonacci-deployment.yml
 ```
 
 
@@ -102,14 +101,14 @@ kubectl create -f fibonacci-deployment.yml
 Public IP adresinizi bulmak için aşağıdaki komutu kullanın.
 
 ``` 
- bx cs workers fibonacci-cluster
+$ bx cs workers fibonacci-cluster
 ```
 
 Curl komutunda bu IP'yi kullanarak fibonacci servisi çağıracağız.
 
 **1. 1000.ci Fibonacci sayısını bulmak için**
   ```
-   curl -v http://<cluster-public-ip>:30080/fibonacci?iteration=1000
+  $ curl -v http://<cluster-public-ip>:30080/fibonacci?iteration=1000
   
   #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -121,7 +120,7 @@ Curl komutunda bu IP'yi kullanarak fibonacci servisi çağıracağız.
   
   **2. 5000 milisaniye çalışıp durduğunda son hesapladığı Fibonacci sayısını bulmak için**
   ```
-   curl -v http://<cluster-public-ip>:30080/fibonacci?duration=5000
+  $ curl -v http://<cluster-public-ip>:30080/fibonacci?duration=5000
 
   #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -134,7 +133,7 @@ Curl komutunda bu IP'yi kullanarak fibonacci servisi çağıracağız.
 
   **3. Hata oluşmasını sağlamak için**
   ```
-  curl -v -X POST http://<cluster-public-ip>:30080/fibonacci?crash=true
+  $ curl -v -X POST http://<cluster-public-ip>:30080/fibonacci?crash=true
 
   #Hata olmaması için crash=false yazmanız yetreli. Kod normal çalışacaktır.
 
@@ -142,4 +141,13 @@ Curl komutunda bu IP'yi kullanarak fibonacci servisi çağıracağız.
   HTTP/1.1 500 Internal Server Error
   X-Powered-By: Express
   ...
+  ```
+
+  
+  Oluşan servisi silmek için, "deployement"ı silmemiz gerek.
+
+  ```
+  $ kubectl get deployement
+  $ kubectl delete deploy <deploy-name>
+  $ kubectl get pods     #"No resources found" dönmeli
   ```

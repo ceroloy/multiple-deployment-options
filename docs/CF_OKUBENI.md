@@ -9,7 +9,7 @@ Bluemix CLI ve CloudFoundry CLI kullanarak servisi sanal bir makinede ayağa kal
 Daha sonra bu dizindeyken, 
 
   ```
-   bx cf push
+  $ bx cf push
   ```
 komutu ile dizindeki Fibonacci mikroservisini bir CloudFoundry sanal makinesinde ayağa kaldırın.
 
@@ -34,7 +34,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
 
   **1. 1000.ci Fibonacci sayısını bulmak için**
   ```
-   curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
+  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?iteration=1000
   
   #Farklı Fibonacci sayılarını bulmak için iteration'a, ..iteration=6 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -46,7 +46,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
   
   **2. 5000 milisaniye çalışıp durduğunda son hesapladığı Fibonacci sayısını bulmak için**
   ```
-   curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
+  $ curl -v http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?duration=5000
 
   #Farklı süreleri denemek için duration'ı, ..duration=100 gibi
   #istediğiniz sayıyı verebilirsiniz.
@@ -63,7 +63,7 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
 
   **3. Hata oluşmasını sağlamak için**
   ```
-   curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
+  $ curl -v -X POST http://fibonacci-service-<random-string>.mybluemix.net/fibonacci?crash=true
 
   #Hata olmaması için crash=false yazmanız yetreli. Kod normal çalışacaktır.
 
@@ -76,11 +76,11 @@ Benim durumumda bu fibonacci-service-aggregate-gramps.mybluemix.net
 Daha sonra bulutta çalışan CloudFoundry servislerini temizlemek isterseniz, alanda çalışan CloudFoundry App'lerinizi şu şekilde görüntüleyebiliriz.
 
   ```
-   bx cf apps
+  $ bx cf apps
 
   #Sanal makinayı durdurmak için
-   bx cf stop fibonacci-service
+  $ bx cf stop fibonacci-service
 
   #Sanal makinayı silmek için
-   bx cf delete fibonacci-service
+  $ bx cf delete fibonacci-service
   ```
