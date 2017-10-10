@@ -59,7 +59,8 @@ $ bx cs workers fibonacci-cluster
 ## Servisi Ayağa Kaldırmak
 
 
-Konfigurasyon detaylarını "fibonacci-cluster"ı için aşağıdaki komutla indirin.
+Konfigurasyon detaylarını cluster isminizle için aşağıdaki komutla indirin.
+Benim durumumda cluster-name = "fibonacci-cluster"
 
 ```
 $ bx cs cluster-config <cluster-name>
