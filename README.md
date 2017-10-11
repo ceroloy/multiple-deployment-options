@@ -1,3 +1,7 @@
+#### [You can find the original by Frederic Lavigne here](https://github.com/IBM-Bluemix/multiple-deployment-options.git)
+#### [Frederic Lavigne'nin Orijinal Ingilizce anlatımı burada bulabilirsiniz](https://github.com/IBM-Bluemix/multiple-deployment-options.git)
+
+
 # Üç Farklı Platformda Fibonacci Mikroservisi'nin Çalıştırılması
 
 ## Bluemix Hesabı Edinme
