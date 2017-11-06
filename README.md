@@ -21,9 +21,9 @@ Bu örnek gösterimde bir Fibonacci Servisini üç farklı mimaride sırasıyla 
 
   Sayı  | Tür | Ürün | Link
 --- | --- | --- | ---
-1 | Sanal Makine | [Cloud Foundry](https://www.cloudfoundry.org/) | [Buradan](https://github.com/ceroloy/multiple-deployment-options/blob/README-cf.md)
-2 | Konteyner | [Kubernetes cluster](https://kubernetes.io/) | [Buradan](https://github.com/ceroloy/multiple-deployment-options/blob/README-kuber.md)
-3 | Sunucusuz Mimari | [OpenWhisk](http://openwhisk.org/) | [Buradan](https://github.com/ceroloy/multiple-deployment-options/blob/README-ow.md)
+1 | Sanal Makine | [Cloud Foundry](https://www.cloudfoundry.org/) | [Buradan](https://github.com/ceroloy/multiple-deployment-options/blob/master/README-cf.md)
+2 | Konteyner | [Kubernetes cluster](https://kubernetes.io/) | [Buradan](https://github.com/ceroloy/multiple-deployment-options/blob/master/README-kuber.md)
+3 | Sunucusuz Mimari | [OpenWhisk](http://openwhisk.org/) | [Buradan](https://github.com/ceroloy/multiple-deployment-options/blob/master/README-ow.md)
 
 
 **Bu gösterim için ayrıca aşağıdaki ek paketlere de ihtiyacımız olacaktır.**
@@ -91,8 +91,8 @@ Daha sonra Fibonacci servisinin kaynak kodunu github'dan kendi proje dosyanıza 
   $ cd multiple-deployement-options
   ```
 
-[Cloud Foundry sanal makinası olarak çalıştırmak için buraya tıklayın.](https://github.com/ceroloy/multiple-deployment-options/blob/turkce/docs/CF_OKUBENI.md)
+[Cloud Foundry sanal makinası olarak çalıştırmak için buraya tıklayın.](https://github.com/ceroloy/multiple-deployment-options/blob/master/README-cf.md)
 
-[Docker Konteyner ile Kubernetes üzerinde çalıştırmak için buraya tıklayın.](https://github.com/ceroloy/multiple-deployment-options/blob/turkce/docs/KUBER_OKUBENI.md)
+[Docker Konteyner ile Kubernetes üzerinde çalıştırmak için buraya tıklayın.](https://github.com/ceroloy/multiple-deployment-options/blob/master/README-kuber.md)
 
-[OpenWhisk ile sunucusuz çalıştırmak için buraya tıklayın.](https://github.com/ceroloy/multiple-deployment-options/blob/turkce/docs/OW_OKUBENI.md)
+[OpenWhisk ile sunucusuz çalıştırmak için buraya tıklayın.](https://github.com/ceroloy/multiple-deployment-options/blob/master/README-ow.md)
